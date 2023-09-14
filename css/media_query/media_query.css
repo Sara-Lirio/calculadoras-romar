@@ -1,5 +1,5 @@
 @media screen and (min-width: 100px) and (max-width: 320px) {
-	.imageLogo{
+	.imageLogo {
         width: 80%;
     }
 
@@ -7,27 +7,34 @@
         font-size: 140%;
     }
 
-    nav{
+    nav {
         
         width: 60%;
     }
 }
 
 @media screen and (min-width: 321px) and (max-width: 375px) {
+    *{
+        margin: .05em auto;
+    }
+
 	.imageLogo{
         width: 80%;
+    }
+
+    nav {
+        margin: 2em 4em;
     }
 
     h1 {
         font-size: 160%;
     }
 
-    nav{
-        
+    nav {
         width: 60%;
     }
 
-    a{
+    a {
         padding: .3em 1.1em;
     }
 }
