@@ -12,3 +12,22 @@
         width: 60%;
     }
 }
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+	.imageLogo{
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 160%;
+    }
+
+    nav{
+        
+        width: 60%;
+    }
+
+    a{
+        padding: .3em 1.1em;
+    }
+}
