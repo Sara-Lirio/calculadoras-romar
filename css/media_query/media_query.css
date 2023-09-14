@@ -1,0 +1,14 @@
+@media screen and (min-width: 100px) and (max-width: 320px) {
+	.imageLogo{
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 140%;
+    }
+
+    nav{
+        
+        width: 60%;
+    }
+}

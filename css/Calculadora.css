@@ -18,24 +18,24 @@ body {
     
 }
 
-.imageLogo{
-    width: 28em;
+.imageLogo {
+    width: 35%;
 }
 
 h1 {
     font-weight: 400;
     text-transform: uppercase;
     text-align: center;
+    font-size: 2.2em;
 }
 
-h3{
+h3 {
     text-align: center;
 }
 
 nav {
     width: 20%;
     height: 80%;
-   
     display: flex;
     justify-content: space-between;
 }
@@ -43,23 +43,21 @@ nav {
 a {
     text-decoration: none;
     border: 1px solid;
-    border-color: white ;
+    border-color: white;
     border-radius: 1em;
     padding: 1em;
     margin-top: 1em;
-    font-size: 1.2em;
+    font-size: 110%;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
     background-color: #2a486d;
 }
 
-p{
-    font-size: .7em;
+p {
+    font-size: 60%;
     font-weight: 500;
 }
-
-
 
 .button-52 {
   letter-spacing: 1px;
