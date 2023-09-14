@@ -12,7 +12,7 @@ body {
 }
 
 .conteudo-secundario {
-    margin: 4em;
+    margin-top: 4em;
     display: flex;
     flex-direction: column;
 }
@@ -32,7 +32,13 @@ body {
 }
 
 input {
-    color: #193454;
+    color: #e3e9f0;
+    background-color: #2a486d;
+    border: 1px #e3e9f0 solid;
+    padding: .5em 1em;
+    
+    border-radius: .7em;
+    margin-bottom: 2em
 }
 
 h1 {

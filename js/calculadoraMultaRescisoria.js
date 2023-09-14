@@ -8,10 +8,9 @@ const spanFalta = document.querySelector('#difPeriodoFalta')
 const spanMeses = document.querySelector('#difPeriodoMeses')
 const spanMultaInt = document.querySelector('#multaIntegral')
 const spanMultaProp = document.querySelector('#multaProporcional')
+const formulario = document.getElementById(formulario)
 
-
-
-function calculateDateDiff () {
+function calculateDateDiff() {
     let inicio = inputInicio.value
     let termino = inputTermino.value
 
@@ -25,13 +24,7 @@ function calculateDateDiff () {
     return diffInDays
 }
 
-button.addEventListener('click', () => {
-    const diffInDays = calculateDateDiff ()
-    spanMeses.innerHTML = Math.round(diffInDays) 
-} )
-
-
-function calculateDateDiff1 () {
+function calculateDateDiff1() {
     let inicio = inputInicio.value
     let termino = inputTermino.value
 
@@ -41,16 +34,10 @@ function calculateDateDiff1 () {
     let diffInTime1 = Math.abs(termino - inicio)
     let timeInOneDay1 = 1000 * 60 * 60 * 24
     let diffInDays1 = diffInTime1 / timeInOneDay1
-
     return diffInDays1
 }
 
-button.addEventListener('click', () => {
-    const diffInDays1 = calculateDateDiff1 ()
-    spanDias.innerHTML = diffInDays1
-} )
-
-function calculateDateDiff2 () {
+function calculateDateDiff2() {
     let entrega = inputEntrega.value
     let termino = inputTermino.value
 
@@ -60,44 +47,47 @@ function calculateDateDiff2 () {
     let diffInTime2 = Math.abs(entrega - termino)
     let timeInOneDay2 = 1000 * 60 * 60 * 24
     let diffInDays2 = diffInTime2 / timeInOneDay2
-
     return diffInDays2
 }
 
-button.addEventListener('click', () => {
-    const diffInDays2 = calculateDateDiff2 ()
-    spanFalta.innerHTML = diffInDays2
-} )
+function calculoMultaIntegral() {
+    let aluguel = inputAluguel.value
 
-function calculoMultaIntegral () {
-   let aluguel = inputAluguel.value
-
-   let multaInt = aluguel * 3
-
+    let multaInt = aluguel * 3
     return multaInt
 }
 
-button.addEventListener('click', () => {
-    const multaInt = calculoMultaIntegral ()
-    spanMultaInt.innerHTML = multaInt
-} )
-
-function calculoMultaProporcional () {
-
- 
+function calculoMultaProporcional() {
     let multaProp = calculoMultaIntegral() / calculateDateDiff1() * calculateDateDiff2()
- 
-     
-     const multaPropFinal = multaProp.toFixed(2)
+    const multaPropFinal = multaProp.toFixed(2)
 
-     return multaPropFinal
- }
- 
- button.addEventListener('click', () => {
-     const multaPropFinal = calculoMultaProporcional ()
-     spanMultaProp.innerHTML = multaPropFinal
+    return multaPropFinal
+}
+
+button.addEventListener('click', () => {
+
+    const diffInDays = calculateDateDiff()
+    spanMeses.innerHTML = Math.round(diffInDays)
+
+    const diffInDays1 = calculateDateDiff1()
+    spanDias.innerHTML = diffInDays1
+
+    const multaInt = calculoMultaIntegral()
+    spanMultaInt.innerHTML = multaInt
+
+    const diffInDays2 = calculateDateDiff2()
+    spanFalta.innerHTML = diffInDays2
+
+    const multaPropFinal = calculoMultaProporcional()
+    spanMultaProp.innerHTML = multaPropFinal
+})
 
 
-
- } )
+function Mudarestado(el) {
+    var display = document.getElementById(el).style.display;
+    if(display == "none")
+        document.getElementById(el).style.display = 'block';
+    else
+        document.getElementById(el).style.display = 'none';
+}
 
