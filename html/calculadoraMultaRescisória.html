@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/multaRescisoria.css">
+
+    <title>Calculadora | Multa Rescisória </title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Calculadora Multa Rescisória</h1>
+        </header>
+        <section class="conteudo-secundario">
+            <div class="conteudo-secundario-dados">
+                <h2 class="conteudo-secundario-dados-titulo">Insira os dados abaixo</h2>
+                <div class="vigencia-contratual">
+
+                    <form class="formulario1">
+                        <label for="iniciodocontrato">Início do Contrato </label>
+                        <input type="date" id="inicio">
+                        <label for="fimdocontrato">Término do Contrato</label>
+                        <input type="date" id="termino">
+                </div>
+                </form>
+                <form class="formulario2">
+                    <label for="dataentrega">Data da Entrega das Chaves</label>
+                    <input type="date" id="entrega">
+                    <label for="valoraluguel">Valor do Aluguel</label>
+                    <input type="number" id="aluguel"> 
+                </form>
+                <div class="btns">
+                    <a href="../Calculadora.html" class="voltar">voltar</a>
+                    <button class="calcular-botao">Calcular</button>
+                </div>
+            </div>
+
+
+            <div class="resultados">
+                <p>Período do Contrato : <span id="difPeriodoMeses"></span> Meses</p><br />
+                <p>Período do Contrato : <span id="difPeriodoDias"></span> dia(s)</p><br />
+                <p>Período que Faltava : <span id="difPeriodoFalta"></span> dia(s)</p><br />
+                <p>Multa - Valor Integral (R$) : <span id="multaIntegral"></span> </p><br />
+                <p class="multa">Multa Proporcional (R$) : <span id="multaProporcional"></span> </p><br />
+            </div>
+        </section>
+
+
+
+    </main>
+
+
+
+    <script src="../js/calculadoraMultaRescisoria.js"></script>
+</body>
+
+</html>

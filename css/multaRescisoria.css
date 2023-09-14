@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: .4em auto;
+}
+
+body {
+    background-color: #193454;
+    
+}
+
+.conteudo-secundario {
+    margin: 4em;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario1{
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario2{
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo-secundario-dados-titulo{
+    margin-bottom: 2em ;
+}
+
+input {
+    color: #193454;
+}
+
+h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 1em;
+}
+
+h2 {
+    font-weight: 500;
+    text-align: center;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.calcular-botao {
+    background-color: transparent;
+    color: white;
+    letter-spacing: 1px;
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: 'Montserrat', sans-serif;
+    touch-action: manipulation;
+    font-size: 1em;
+    border: 1px solid white;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 1em;
+    padding: .5em 1em;
+}
+
+.calcular-botao:after{
+
+    content: "";
+    background-color: #2a486d;
+    border-radius: 1em;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 8px;
+    transition: 0.2s;
+}
+
+.calcular-botao:hover:after {
+    top: 0px;
+    left: 0px;
+}
+
+.resultados{
+    display: none;
+}
