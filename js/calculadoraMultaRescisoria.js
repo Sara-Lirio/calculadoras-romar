@@ -8,7 +8,9 @@ const spanFalta = document.querySelector('#difPeriodoFalta')
 const spanMeses = document.querySelector('#difPeriodoMeses')
 const spanMultaInt = document.querySelector('#multaIntegral')
 const spanMultaProp = document.querySelector('#multaProporcional')
-const formulario = document.getElementById(formulario)
+
+let referencia = document.querySelector('#REF')
+const spanREF = document.querySelector('#idREF')
 
 function calculateDateDiff() {
     let inicio = inputInicio.value
@@ -20,7 +22,6 @@ function calculateDateDiff() {
     let diffInTime = Math.round(termino - inicio)
     let timeInOneDay = 1000 * 60 * 60 * 24 * 30
     let diffInDays = diffInTime / timeInOneDay
-
     return diffInDays
 }
 
@@ -65,29 +66,47 @@ function calculoMultaProporcional() {
 }
 
 button.addEventListener('click', () => {
-
     const diffInDays = calculateDateDiff()
     spanMeses.innerHTML = Math.round(diffInDays)
-
     const diffInDays1 = calculateDateDiff1()
     spanDias.innerHTML = diffInDays1
-
     const multaInt = calculoMultaIntegral()
     spanMultaInt.innerHTML = multaInt
-
     const diffInDays2 = calculateDateDiff2()
     spanFalta.innerHTML = diffInDays2
-
     const multaPropFinal = calculoMultaProporcional()
-    spanMultaProp.innerHTML = multaPropFinal
+    spanMultaProp.innerHTML = multaPropFinal 
 })
 
 
-function Mudarestado(el) {
+
+function Mudarestado(el,btn, res) {
     var display = document.getElementById(el).style.display;
-    if(display == "none")
+
+    if(display == "none") {
         document.getElementById(el).style.display = 'block';
-    else
+    }
+
+    else {
         document.getElementById(el).style.display = 'none';
+        document.getElementById(res).style.display = 'block';
+        document.getElementById(btn).style.display = 'none';
+    }
 }
 
+
+const printy = document.querySelector('#imprimir')
+
+printy.addEventListener("click", () => {
+    const resultado = document.querySelector("#resultados")
+
+    const options = {
+        margin: [10,10,10,10],
+        filename: "multa.pdf",
+        html2canvas: {scale: 2},
+        jsPDF : {unit:"mm", format:"a4", origin:"portrait"}
+    }
+
+
+    html2pdf().set(options).from(resultado).save();
+})
