@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../css/multaRescisoria.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html.js/0.12.1/HTML.min.js"
+        integrity="sha512-dwlJiL/dLQp8ndnRL5vOGnuB3HZon7fKz+h0Miic8+wMi6WxlgNoiyqO1xlr8y1dz67bGEkBm2pbPMgU6M8Wtg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Calculadora | Multa Rescisória </title>
+
 </head>
 
 <body>
@@ -21,13 +22,13 @@
                 <form class="formulario">
                     <div class="labelRef">
                         <label>REF</label>
-                        <input class='refCC' type="text" id="REF"/>
+                        <input class='refCC' type="text" id="REF" />
 
                         <label>CC</label>
-                        <input class='refCC' type="text" />
+                        <input class='refCC' type="text" id="CC" />
 
                         <label>Tipo Locação</label>
-                        <select name="Tipo de Locação">
+                        <select name="Tipo de Locação" id="tipoLocacao">
                             <option></option>
                             <option>Residencial</option>
                             <option>Comercial</option>
@@ -36,7 +37,7 @@
                     </div>
 
                     <label>Imóvel</label>
-                    <input type="text" />
+                    <input type="text" id="imovel" />
 
                     <div class="labelRef">
 
@@ -58,33 +59,37 @@
 
             </div>
             <div class="resultados" id="resultados">
-                <div>
+                <section class="sectionResultados">
                     <img src="../img/logo-azul-branco.png" class="logoAzulBranco" />
-                    <p>REF : <span id="idREF"></span></p>
-                    <p>CC : <span id="CC"></span></p>
-                    <p>Tipo de Locação : <span></span></p>
-                    <p>Imóvel : <span id="Imovel"></span></p>
-                    <p>Início do Contrato : <span id="iniciodocontrato"></span></p>
-                    <p>Término do Contrato : <span id="fimdocontrato"></span></p>
-                </div>
+                    <div class="infos">
+                        <p>REF : <span id="idREF"></span></p>
+                        <p>CC : <span id="idCC"></span></p>
+                        <p>Tipo de Locação : <span id="idTipoLocacao"></span></p>
+                    </div>
+                    <p>Imóvel : <span id="idImovel"></span></p>
+                    <div class="infosDate">
+                        <p>Início do Contrato : <span id="idInicioDoContrato"></span></p>
+                        <p>Término do Contrato : <span id="idFimDoContrato"></span></p>
+                    </div>
 
-
-                <p>Período do Contrato : <span id="difPeriodoMeses"></span> Meses</p><br />
-                <p>Período do Contrato : <span id="difPeriodoDias"></span> dia(s)</p><br />
-                <p>Período que Faltava : <span id="difPeriodoFalta"></span> dia(s)</p><br />
-                <p>Multa - Valor Integral (R$) : <span id="multaIntegral"></span> </p><br />
-                <p class="multa">Multa Proporcional (R$) : <span id="multaProporcional"></span> </p><br />
-                <a href="../html/calculadoraMultaRescisória.html" class="voltar">voltar</a>
-                <a id="imprimir">Imprimir</a>
+                    <p>Período do Contrato : <span id="difPeriodoMeses"></span> Meses</p><br />
+                    <p>Período do Contrato : <span id="difPeriodoDias"></span> dia(s)</p><br />
+                    <p>Período que Faltava : <span id="difPeriodoFalta"></span> dia(s)</p><br />
+                    <p>Multa - Valor Integral (R$) : <span id="multaIntegral"></span> </p><br />
+                    <p class="multa">Multa Proporcional (R$) : <span id="multaProporcional"></span> </p><br />
+                    <div>
+                        <a href="../html/calculadoraMultaRescisória.html" class="voltar">voltar</a>
+                        <a id="salvar" class="calcular-botao">Salvar</a>
+                    </div>
             </div>
+        </section>
+        </div>
 
-            <div class="botoes" id="botoes">
-                <a href="../index.html" class="voltar">voltar</a>
-                <button class="calcular-botao"
-                    onClick="Mudarestado('formularioMulta','botoes','resultados')">Calcular</button>
-            </div>
-
-
+        <div class="botoes" id="botoes">
+            <a href="../index.html" class="voltar">voltar</a>
+            <button class="calcular-botao"
+                onClick="Mudarestado('formularioMulta','botoes','resultados')">Calcular</button>
+        </div>
 
         </section>
     </main>

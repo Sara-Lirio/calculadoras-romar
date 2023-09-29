@@ -99,26 +99,43 @@ h2 {
     left: 0px;
 }
 
-.resultados{
+.resultados {
     display: none;
     color: white;
 }
 
-.logoAzulBranco{
-    width: 20%;
+.logoAzulBranco {
+    width: 30%;
 }
 
-.labelRef{
+.labelRef {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
-label{ 
+label { 
     margin-right: .1em;
 }
 
 .refCC {
     width: 8em;
+}
+
+.infos, .infosDate {
+    display: flex;
+}
+
+.infos {
+    padding: .5em;
+}
+
+.sectionResultados{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+span {
+    margin-right: 1em;
 }

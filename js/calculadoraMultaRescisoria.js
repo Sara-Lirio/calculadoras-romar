@@ -1,16 +1,60 @@
+
+
 const inputInicio = document.querySelector('#inicio')
 const inputTermino = document.querySelector('#termino')
 const inputEntrega = document.querySelector('#entrega')
 const inputAluguel = document.querySelector('#aluguel')
+const inputRef = document.querySelector('#REF')
+const inputCC = document.querySelector('#CC')
+const selectTipoLocacao = document.querySelector('#tipoLocacao')
+const inputImovel = document.querySelector('#imovel')
+
+const resultados = document.querySelector('#resultados')
+
 const button = document.querySelector('button')
 const spanDias = document.querySelector('#difPeriodoDias')
 const spanFalta = document.querySelector('#difPeriodoFalta')
 const spanMeses = document.querySelector('#difPeriodoMeses')
 const spanMultaInt = document.querySelector('#multaIntegral')
 const spanMultaProp = document.querySelector('#multaProporcional')
-
-let referencia = document.querySelector('#REF')
 const spanREF = document.querySelector('#idREF')
+const spanCC = document.querySelector('#idCC')
+const spanTipoLocacao = document.querySelector('#idTipoLocacao')
+const spanImovel = document.querySelector('#idImovel')
+const spanInicioContrato = document.querySelector('#idInicioDoContrato')
+const spanTerminoContrato = document.querySelector('#idFimDoContrato')
+
+
+
+function infoRef() {
+    const valor = inputRef.value
+    return valor
+}
+
+function infoCC() {
+    const valor = inputCC.value
+    return valor
+}
+
+function tipoLocacao() {
+    const valor = selectTipoLocacao.value
+    return valor
+}
+
+function infoImovel() {
+    const valor = inputImovel.value
+    return valor
+}
+
+function inicioContrato() {
+    const valor = inputInicio.value
+    return valor
+}
+
+function terminoContrato() {
+    const valor = inputTermino.value
+    return valor
+}
 
 function calculateDateDiff() {
     let inicio = inputInicio.value
@@ -75,15 +119,26 @@ button.addEventListener('click', () => {
     const diffInDays2 = calculateDateDiff2()
     spanFalta.innerHTML = diffInDays2
     const multaPropFinal = calculoMultaProporcional()
-    spanMultaProp.innerHTML = multaPropFinal 
+    spanMultaProp.innerHTML = multaPropFinal
+
+    const escreveREF = infoRef()
+    spanREF.innerHTML = escreveREF
+    const escreveCC = infoCC()
+    spanCC.innerHTML = escreveCC
+    const escreveTipoLocacao = tipoLocacao()
+    spanTipoLocacao.innerHTML = escreveTipoLocacao
+    const escreveImovel = infoImovel()
+    spanImovel.innerHTML = escreveImovel
+    const escreveInicio = inicioContrato()
+    spanInicioContrato.innerHTML = escreveInicio
+    const escreveTermino = terminoContrato()
+    spanTerminoContrato.innerHTML = escreveTermino
 })
 
-
-
-function Mudarestado(el,btn, res) {
+function Mudarestado(el, btn, res) {
     var display = document.getElementById(el).style.display;
 
-    if(display == "none") {
+    if (display == "none") {
         document.getElementById(el).style.display = 'block';
     }
 
@@ -94,19 +149,17 @@ function Mudarestado(el,btn, res) {
     }
 }
 
+const salvar = document.querySelector('#salvar');
 
-const printy = document.querySelector('#imprimir')
-
-printy.addEventListener("click", () => {
-    const resultado = document.querySelector("#resultados")
+salvar.addEventListener("click", () => {
+    const saveBody = document.querySelector("#resultados");
 
     const options = {
         margin: [10,10,10,10],
-        filename: "multa.pdf",
-        html2canvas: {scale: 2},
-        jsPDF : {unit:"mm", format:"a4", origin:"portrait"}
-    }
+        filename: "teste.pdf",
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait"}
+    };
 
-
-    html2pdf().set(options).from(resultado).save();
-})
+    html2pdf().set(options).from(saveBody).save();
+});
